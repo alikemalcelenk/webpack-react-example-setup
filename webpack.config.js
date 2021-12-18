@@ -40,6 +40,7 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.jsx'],
     alias: {
+      '@pages': path.resolve(__dirname, 'src/pages/'),
       '@components': path.resolve(__dirname, 'src/components/'),
     },
   },
@@ -52,11 +53,9 @@ module.exports = {
     new webpack.ProgressPlugin(),
   ],
   devServer: {
-    contentBase: path.join(__dirname, 'dist'),
-    compress: true,
-    port: 8080,
-    open: true,
-    hot: true,
-    historyApiFallback: true,
+    static: {
+      directory: path.join(__dirname, 'dist'),
+    },
+    port: 3000,
   },
 };

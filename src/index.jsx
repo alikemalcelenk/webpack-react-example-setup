@@ -1,5 +1,10 @@
-const test = (a) => {
-  console.log(a);
-};
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './App';
 
-test('TEST');
+ReactDOM.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
+  document.getElementById('root')
+);
