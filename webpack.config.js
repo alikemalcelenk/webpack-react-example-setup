@@ -4,7 +4,7 @@ const webpack = require('webpack');
 
 module.exports = {
   mode: 'development',
-  entry: path.resolve(__dirname, './src/index.jsx'),
+  entry: path.resolve(__dirname, './src/index.js'),
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'main.bundle.js',
@@ -22,17 +22,16 @@ module.exports = {
         },
       },
       {
-        test: /\.s[ac]ss$/i,
+        test: /\.css$/i,
         use: [
           'style-loader',
           {
             loader: 'css-loader',
             options: {
-              modules: true, // for module.css
+              modules: true,
               importLoaders: 1,
             },
           },
-          'sass-loader',
         ],
       },
     ],
