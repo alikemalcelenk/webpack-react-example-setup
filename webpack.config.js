@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const webpack = require('webpack');
 
 module.exports = {
   mode: 'development',
@@ -8,12 +9,6 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     filename: 'main.bundle.js',
   },
-  plugins: [
-    new HtmlWebpackPlugin({
-      title: 'Webpack React Example Setup',
-      template: path.resolve(__dirname, './public/index.html'),
-    }),
-  ],
   module: {
     rules: [
       {
@@ -41,5 +36,27 @@ module.exports = {
         ],
       },
     ],
+  },
+  resolve: {
+    extensions: ['.js', '.jsx'],
+    alias: {
+      '@components': path.resolve(__dirname, 'src/components/'),
+    },
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
+      title: 'Webpack React Example Setup',
+      template: path.resolve(__dirname, './public/index.html'),
+    }),
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.ProgressPlugin(),
+  ],
+  devServer: {
+    contentBase: path.join(__dirname, 'dist'),
+    compress: true,
+    port: 8080,
+    open: true,
+    hot: true,
+    historyApiFallback: true,
   },
 };
