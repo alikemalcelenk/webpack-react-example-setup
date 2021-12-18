@@ -1,0 +1,25 @@
+{
+  "name": "webpack-react-example-setup",
+  "version": "1.0.0",
+  "node": "v16.11.1",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alikemalcelenk/webpack-react-example-setup.git"
+  },
+  "keywords": [],
+  "author": "Ali Kemal Çelenk",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/alikemalcelenk/webpack-react-example-setup/issues"
+  },
+  "homepage": "https://github.com/alikemalcelenk/webpack-react-example-setup#readme",
+  "devDependencies": {
+    "webpack": "^5.65.0",
+    "webpack-cli": "^4.9.1",
+    "webpack-dev-server": "^4.6.0"
+  }
+}
